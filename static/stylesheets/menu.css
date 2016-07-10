@@ -1,0 +1,27 @@
+.menu-closed .nav-sub {height: 0 !important; display: none;}
+
+.menu-open .nav-sub {height: auto;}
+
+/*
+.menu-open .menu-icon:after {
+    content: "\e260";
+    margin: 0 5px;
+    font-family: 'Glyphicons Halflings';
+}
+
+.menu-closed .menu-icon:after {
+    content: "\e259";
+    margin: 0 5px;
+    font-family: 'Glyphicons Halflings';
+}
+*/
+
+.menu-open .menu-icon:after {
+    content: "[-]";
+    margin: 0 5px;
+}
+
+.menu-closed .menu-icon:after {
+    content: "[+]";
+    margin: 0 5px;
+}

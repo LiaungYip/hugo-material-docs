@@ -1,3 +1,6 @@
+    <script async src="{{ .Site.BaseURL }}jquery-3.0.0.min.js"></script>
+    <script async src="{{ .Site.BaseURL }}menu.js"></script>
+
     <script>
     {{ with .Scratch.Get "repo_id" }}
       var base_url = '{{ (printf "%s" $.Site.BaseURL) | safeJS }}';
