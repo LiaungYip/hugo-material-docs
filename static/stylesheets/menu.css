@@ -16,12 +16,16 @@
 }
 */
 
+.menu-icon {
+    float: right;
+}
+
 .menu-open .menu-icon:after {
-    content: "[-]";
+    content: "\2796";
     margin: 0 5px;
 }
 
 .menu-closed .menu-icon:after {
-    content: "[+]";
+    content: "\2795";
     margin: 0 5px;
 }

@@ -1,0 +1,69 @@
+/*.drawer .toc a.current,
+.drawer .toc a:focus,
+.drawer .toc a:hover {
+    color: #e84e40;
+} */
+
+.drawer .toc a.current,
+.drawer .toc a:focus,
+.drawer .toc a:hover {
+    color: white;
+    background-color: rgb(232,78,64);
+}
+
+.drawer .anchor a {
+    border-left: 2px solid #e84e40
+}
+
+.drawer .section {
+    color: rgba(0, 0, 0, .54)
+}
+
+.drawer {
+    width: 262px;
+    font-size: 13px;
+    line-height: 1em
+}
+
+/*
+.drawer .toc li a {
+    display: block;
+    padding: 4px 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+*/
+
+.drawer .toc li a {
+    display: block;
+    padding: 4px 9px 4px 9px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+/*
+.drawer .toc li.anchor a {
+    margin-left: 12px;
+    padding: 10px 24px 10px 12px
+}
+*/
+
+.drawer .toc li.anchor a {
+    margin-left: 12px;
+    padding: 10px 24px 10px 12px
+}
+
+/*.drawer .toc li ul {
+    margin-left: 12px;
+}*/
+
+.drawer .toc li ul {
+    margin-left: 9px;
+    border-left: 3px solid rgba(0,0,0,0.1)
+}
+
+/*.drawer .toc li{
+    background-color: rgba(0,0,0,0.05);
+}*/
