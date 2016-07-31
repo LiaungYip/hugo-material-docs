@@ -1,9 +1,9 @@
 <nav aria-label="Navigation">
-  <a href="{{ with .Site.Params.repo_url }}{{ . }}{{ else }}{{ .Site.BaseURL }}{{ end }}" class="project">
+  <a href="{{ with .Site.Params.repo_url }}{{ . }}{{ else }}{{ "/" | relURL }}{{ end }}" class="project">
     <div class="banner">
       {{ with .Site.Params.logo }}
         <div class="logo">
-          <img src="{{ $.Site.BaseURL }}{{ . }}">
+          <img src="{{ . | relURL }}">
         </div>
       {{ end }}
       <div class="name">

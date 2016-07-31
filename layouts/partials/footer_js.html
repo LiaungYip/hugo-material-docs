@@ -1,5 +1,5 @@
-    <script async src="{{ .Site.BaseURL }}jquery-3.0.0.min.js"></script>
-    <script async src="{{ .Site.BaseURL }}menu.js"></script>
+    <script async src="{{ "jquery-3.0.0.min.js" | relURL }}"></script>
+    <script async src="{{ "menu.js" | relURL }}"></script>
 
     <script>
     {{ with .Scratch.Get "repo_id" }}
@@ -11,7 +11,7 @@
     {{ end }}
     </script>
 
-    <script src="{{ .Site.BaseURL }}javascripts/application.js"></script>
+    <script src="{{ "javascripts/application.js" | relURL }}"></script>
     {{ range .Site.Params.custom_js }}
     <script src="{{ . | absURL }}"></script>
     {{ end }}
@@ -88,7 +88,7 @@
       </script>
     {{ end }}
 
-    <script src="//gohugo.io/js/highlight.pack.js"></script>
+    <script src="http://gohugo.io/js/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>

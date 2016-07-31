@@ -21,42 +21,26 @@
 
     <meta property="og:url" content="{{ .Permalink }}">
     {{ with .Site.Title }}<meta property="og:title" content="{{ . }}">{{ end }}
-    {{ with .Site.Params.logo }}<meta property="og:image" content="{{ $.Site.BaseURL }}{{ . }}">{{ end }}
+    {{ with .Site.Params.logo }}<meta property="og:image" content="{{ . | relURL }}">{{ end }}
     {{ with .Site.Title }}<meta name="apple-mobile-web-app-title" content="{{ . }}">{{ end }}
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.BaseURL }}{{ with .Site.Params.favicon }}{{ . }}{{ else }}images/favicon.ico{{ end }}">
-    <link rel="icon" type="image/x-icon" href="{{ $.Site.BaseURL }}{{ with .Site.Params.favicon }}{{ . }}{{ else }}images/favicon.ico{{ end }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ with .Site.Params.favicon }}{{ . | relURL }}{{ else }}{{ "images/favicon.ico" | relURL }}{{ end }}">
+    <link rel="icon" type="image/x-icon" href="{{ with .Site.Params.favicon }}{{ . | relURL }}{{ else }}{{ "images/favicon.ico" | relURL}}{{ end }}">
 
-    <style>
-      @font-face {
-        font-family: 'Icon';
-        src: url('{{ .Site.BaseURL }}fonts/icon.eot?52m981');
-        src: url('{{ .Site.BaseURL }}fonts/icon.eot?#iefix52m981')
-               format('embedded-opentype'),
-             url('{{ .Site.BaseURL }}fonts/icon.woff?52m981')
-               format('woff'),
-             url('{{ .Site.BaseURL }}fonts/icon.ttf?52m981')
-               format('truetype'),
-             url('{{ .Site.BaseURL }}fonts/icon.svg?52m981#icon')
-               format('svg');
-        font-weight: normal;
-        font-style: normal;
-      }
-    </style>
-
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}stylesheets/application.css">
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}stylesheets/temporary.css">
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}stylesheets/palettes.css">
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}stylesheets/menu.css">
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}stylesheets/pcgen-specific.css">
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}{{ with .Site.Params.highlight_css }}{{ . }}{{ else }}stylesheets/highlight/highlight.css{{ end }}">
+    <link rel="stylesheet" href="{{ "stylesheets/icon.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "stylesheets/application.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "stylesheets/temporary.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "stylesheets/palettes.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "stylesheets/menu.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "stylesheets/pcgen-specific.css" | relURL }}">
+    <link rel="stylesheet" href="{{ with .Site.Params.highlight_css }}{{ . }}{{ else }}{{ "stylesheets/highlight/highlight.css" | relURL}}{{ end }}">
 
     {{/* set default values if no custom ones are defined */}}
     {{ $text := or .Site.Params.font.text "Roboto" }}
     {{ $code := or .Site.Params.font.code "Roboto Mono" }}
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family={{ $text }}:400,700|{{ replace  $code " " "+" }}">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family={{ $text }}:400,700|{{ replace  $code " " "+" }}">
     <style>
       body, input {
         font-family: '{{ $text }}', Helvetica, Arial, sans-serif;
@@ -67,9 +51,9 @@
     </style>
 
     {{ range .Site.Params.custom_css }}
-    <link rel="stylesheet" href="{{ $.Site.BaseURL }}{{ . }}">
+    <link rel="stylesheet" href="{{ . | relURL }}">
     {{ end }}
-    <script src="{{ .Site.BaseURL }}javascripts/modernizr.js"></script>
+    <script src="{{ "javascripts/modernizr.js" | relURL }}"></script>
 
     {{ with .RSSlink }}
     <link href="{{ . }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
