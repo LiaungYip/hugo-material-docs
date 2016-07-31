@@ -25,6 +25,11 @@
     line-height: 1em
 }
 
+.article a h2:focus, 
+.article a h2:hover {
+    text-decoration: underline;
+}
+
 /*
 .drawer .toc li a {
     display: block;
